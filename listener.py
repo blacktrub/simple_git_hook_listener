@@ -11,10 +11,10 @@ TOKEN = None
 @route('/deploy/<token>')
 def view(token):
     if token != TOKEN:
-        return 'no ok', 403
+        return 'no ok'
 
     subprocess.Popen(os.path.join(PATH, 'deploy.sh'), shell=True)
-    return 'ok', 200
+    return 'ok'
 
 
 if __name__ == '__main__':

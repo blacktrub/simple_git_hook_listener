@@ -8,7 +8,8 @@ PATH = os.path.dirname(os.path.abspath(__file__))
 TOKEN = None
 
 
-@route('/deploy/<token>')
+@route('/deploy/<token>', method='GET')
+@route('/deploy/<token>', method='POST')
 def view(token):
     if token != TOKEN:
         return 'no ok'
